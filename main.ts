@@ -7,12 +7,13 @@
 
 // variables
 let randomNumber: number = -1
+let count: number = 0
 
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 basic.pause(1000)
 
-input.onGesture(Gesture.Shake, function() {
+    input.onGesture(Gesture.Shake, function() {
     randomNumber = randint(0, 2)
     basic.clearScreen()
 
@@ -31,18 +32,21 @@ input.onGesture(Gesture.Shake, function() {
     basic.showIcon(IconNames.Scissors)    
     }
 
+    })
+
     // Pause to show you're redy again
     basic.pause(1000)
     basic.showIcon(IconNames.Happy)
 
     // Adds 1 to score
     input.onButtonPressed(Button.A, function () {
-    randomNumber = (randomNumber + 1)
+    count = (count + 1)
     basic.clearScreen()
-    }
+    basic.showString('' + (count).toString())
+    })
 
-    //input.onButtonPressed(Button.B, function () {
-    //basic.showString('' + (randomNumber).toString())
-    //}
+    // Shows count
+    input.onButtonPressed(Button.B, function () {
+    basic.showNumber(count)
+    })
    
-})
