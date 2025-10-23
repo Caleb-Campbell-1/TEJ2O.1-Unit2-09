@@ -22,17 +22,22 @@ basic.pause(1000)
     basic.showIcon(IconNames.SmallSquare)
     }
     
+    
     // if randomNumber == 1
     if (randomNumber == 1) {
-    basic.showIcon(IconNames.Chessboard)
-    }
+    basic.showLeds(`
+    # # # # #
+    # . . . #
+    # . . . #
+    # . . . #
+    # # # # #
+    `)}
 
     // if randomNumber == 2
     if (randomNumber == 2) {
     basic.showIcon(IconNames.Scissors)    
     }
 
-    })
 
     // Pause to show you're redy again
     basic.pause(1000)
@@ -49,4 +54,4 @@ basic.pause(1000)
     input.onButtonPressed(Button.B, function () {
     basic.showNumber(count)
     })
-   
+    })
